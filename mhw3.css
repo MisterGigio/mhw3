@@ -1,0 +1,1214 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 16px;
+    font-family: 'Newsreader', serif;
+}
+
+header {
+    background-color: rgb(26, 26, 26);
+    height: 166px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    color: #B3B3B3;
+    font-size: calc(0.8em + 1vw);
+}
+
+/* ----- HEADER TOP ----- */
+.header-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: auto 15px 0;
+}
+
+/* ----- HAMBURGER MENÙ ----- */
+.menu-toggle {
+    font-size: 24px;
+    cursor: pointer;
+    color: #B3B3B3;
+}
+
+/* ----- TITOLO/LOGO ----- */
+.header-top .logo {
+    color: white;
+    text-align: center;
+    margin: 0;
+    margin-left: 150px;
+    cursor: pointer;
+}
+
+/* ----- LOG IN ----- */
+.logIn ul {
+    display: flex;
+    list-style: none;
+    gap: 15px;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.logIn ul li a {
+    text-decoration: none;
+    color: #B3B3B3;
+    padding: 10px;
+    transition: color 0.5s ease-in-out;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+.logIn ul li a:hover {
+    color: white;
+}
+
+/* ----- NAVBAR IN BASSO ----- */
+.nav-bar {
+    margin-top: auto;
+}
+
+.nav-bar ul {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+}
+
+.nav-bar ul li a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #B3B3B3;
+    font-weight: 600;
+    font-size: 14px;
+    transition: color 0.5s ease-in-out;
+    text-transform: uppercase;
+}
+
+.nav-bar ul li a:hover {
+    color: white;
+    font-size: 16px;
+}
+
+/* Menù a scomparsa */
+.menu-toggle-media {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
+
+/* ----- @media QUERY DELLA NAV BAR ----- */
+@media(max-width:768px) {
+
+    .menu-toggle {
+        display: none;
+    }
+
+    .logIn {
+        display: none;
+    }
+
+    /* ----- menù nascosto di default ----- */
+    .nav-bar {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        opacity: 0;
+    }
+
+    hr {
+        display: none;
+    }
+
+    /* ----- Header versione mobile ----- */
+    .header-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: auto 15px 0;
+        position: relative;
+        width: 100%;
+        height: 100px;
+    }
+
+    .header-top ul li a {
+        margin-right: 10px;
+    }
+
+    /* ----- Titolo/Logo versione mobile ----- */
+    .header-top .logo {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        color: white;
+        text-align: center;
+        margin: 0;
+        cursor: pointer;
+        height: 40px;
+    }
+
+    .menu-toggle-media {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        font-size: 24px;
+        color: #B3B3B3;
+    }
+
+    /* ----- toggleMenuVisibile() ----- */
+    .menu-toggle-media-Visibile {
+        display: none;
+    }
+
+    .menu-toggle-Visibile {
+        display: block;
+    }
+
+    .nav-bar-Visibile {
+        display: flex;
+        opacity: 1;
+    }
+
+    .logIn-Visibile {
+        display: flex;
+        opacity: 1;
+    }
+
+    /* ----- toggleMenuInvisibile() ----- */
+    .menu-toggle-Invisible {
+        display: none;
+    }
+
+    .menu-toggle-media-Invisible {
+        display: flex;
+    }
+
+    .nav-bar-Invisibile {
+        display: none;
+        opacity: 0;
+    }
+
+    .logIn-Invisibile {
+        display: none;
+        opacity: 0;
+    }
+}
+
+/* ----- CONTAINER - MAIN NEWS ----- */
+/* ----- CONTENITORE GENERALE ----- */
+#container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: calc(0.5em + 0.4vw);
+}
+
+/* ----- CONTENITORI DI SX, CENTRO, DX IN DISPLAY FLEX -----*/
+.left-container,
+.center-container,
+.right-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: auto;
+    cursor: pointer;
+    text-align: justify;
+}
+
+/* ----- OPZIONI DEGLI H1, H3, H4, DATE, AUTHOR ----- */
+.nav-bar-option,
+.nav-bar-reviews,
+.nav-bar-more-reviews,
+.nav-bar-features {
+    color: rgb(43, 43, 43);
+    margin: 10px 0;
+}
+
+.nav-bar-option {
+    font-size: 13px;
+}
+
+.date,
+.date-features {
+    font-size: 12px;
+    color: #151515;
+}
+
+.author,
+.date,
+.date-features,
+.author-features {
+    display: block;
+    margin: 5px 0 5px 0;
+}
+
+h3:hover,
+h1:hover,
+h4:hover {
+    text-decoration: underline;
+}
+
+/* ----- TESTO CONTENUTO DEI VARI TITOLI DEGLI ARTICOLI ----- */
+.left-container-card .title,
+.side-left-container-card .title,
+.side-article h4 {
+    word-wrap: break-word;
+    width: 342px;
+}
+
+/* ----- SEZIONE PRINCIPALE DEL SITO ----- */
+.main-left-container-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* ----- IMMAGINE PRINCIPALE DEL SITO ----- */
+.main-left-container-card img {
+    width: 650px;
+    height: auto;
+}
+
+/* ----- SEZIONE SECONDARIA DEL SITO ----- */
+.side-left-container-card {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+/* ----- DIMENSIONI DELLE IMMAGINI ----- */
+.left-container-card img {
+    width: 342px;
+    height: 171px;
+    object-fit: cover;
+}
+
+.side-left-container-card img {
+    width: 300px;
+    height: auto;
+    object-fit: cover;
+}
+
+/* ----- BORDI DEI CONTENITORI ----- */
+.center-hr {
+    border-left: 2px solid black;
+    padding: 50px;
+    border-right: 2px solid black;
+}
+
+.hrLine {
+    border-top: 2px solid black;
+    padding-top: 30px;
+    border-bottom: 2px solid black;
+}
+
+.hrLineRight {
+    border-bottom: 2px solid black;
+    padding-bottom: 20px;
+}
+
+.side-hr {
+    border-top: 2px solid black;
+    padding-top: 20px;
+}
+
+/* ----- SEZIONE @media DELLA PRIMA SEZIONE DEL SITO ----- */
+@media(max-width:1450px) {
+
+    #container {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .left-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        background-color: whitesmoke;
+        border-radius: 5px;
+        box-shadow: 0 3px 3px rgba(0, 0, 0, 0.4);
+        padding: 20px 30px;
+        transition: padding 0.5s ease;
+        width: 800px;
+    }
+
+    .center-container {
+        background-color: whitesmoke;
+        border-radius: 5px;
+        box-shadow: 0 3px 3px rgba(0, 0, 0, 0.4);
+        padding: 20px 30px;
+        transition: padding 0.5s ease;
+        width: 800px;
+    }
+
+    .right-container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        background-color: whitesmoke;
+        border-radius: 5px;
+        box-shadow: 0 3px 3px rgba(0, 0, 0, 0.4);
+        font-size: 15px;
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 2em;
+    }
+
+
+    /* ----- SEZIONE HOVER DEI 3 CONTENITORI PRINCIPALI ----- */
+    .left-container:hover,
+    .center-container:hover {
+        padding: 40px 60px;
+    }
+
+    .side-article {
+        transition: padding 0.5s ease;
+    }
+
+    .side-article:hover {
+        padding: 40px 60px;
+        background-color: rgb(196, 185, 185) !important;
+    }
+
+    .center-hr,
+    .hrLine,
+    .hrLineRight,
+    .side-hr {
+        border: none;
+    }
+}
+
+@media (max-width: 1020px) {
+
+    .left-container,
+    .center-container,
+    .right-container {
+        display: flex;
+        flex-direction: column;
+        width: 400px;
+    }
+
+    .center-container img {
+        width: 100%;
+        height: auto;
+    }
+
+    .side-article:hover {
+        padding: 10px 15px;
+        background-color: blanchedalmond;
+    }
+
+}
+
+/* ----- TITOLO ----- */
+.reviews-title {
+    border-top: 2px solid black;
+    padding: 20px;
+    border-bottom: 2px solid black;
+    width: 100%;
+    font-size: 30px;
+    padding-bottom: 7px;
+    cursor: pointer;
+}
+
+/* ----- CONTENITORE PADRE ----- */
+#reviews {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    font-size: calc(0.5em + 0.4vw);
+    padding: 50px 110px;
+}
+
+/* ----- CONTENITORE FIGLIO ----- */
+.reviews-container {
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    font-size: calc(0.5em + 0.4vw);
+}
+
+/* ----- CONTENITORE NIPOTE: review principale ----- */
+.main-reviews {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    cursor: pointer;
+}
+
+/* ----- CONTENITORE NIPOTE: reviews secondarie ----- */
+.side-reviews {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 50px;
+    height: 100%;
+}
+
+/* ----- CONTENITORE PRO-NIPOTE: contiene le reviews di destra che fanno parte di quelle secondarie */
+.side-sections-reviews {
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+    margin-left: 100px;
+    border-bottom: 2px solid black;
+    align-items: center;
+    padding-bottom: 20px;
+}
+
+.side-sections-reviews p {
+    font-size: 1.2em !important;
+}
+
+/* ----- IMMAGINI ----- */
+.main-reviews img {
+    max-height: 100%;
+    width: auto;
+}
+
+.side-sections-reviews img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* ----- Dimensioni e posizioni degli h1, h3, p, author, title ----- */
+.side-sections-info h1,
+.side-sections-info h3,
+.side-sections-info p,
+.author,
+.main-reviews h1,
+.main-reviews h3,
+.main-reviews p {
+    margin-bottom: 10px;
+}
+
+.nav-bar-reviews,
+.artist-reviews,
+.side-sections-info p,
+.author {
+    font-size: 13px;
+}
+
+.title-reviews {
+    font-size: 25px;
+}
+
+/* ----- BOTTONE ----- */
+.btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #fff;
+    color: black;
+    border: 2px solid black;
+    cursor: pointer;
+    font-weight: bold;
+    transition: color 1s ease-out;
+    min-width: 2.5rem;
+    height: 3rem;
+}
+
+.btn:hover {
+    color: #fff;
+    background-color: black;
+}
+
+/* ----- SEZIONE @media DI REVIEWS ----- */
+@media(max-width:1400px) {
+    .reviews-container {
+        padding: 2em;
+        align-items: center;
+    }
+
+    .main-reviews img,
+    .side-reviews {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+@media(max-width:1024px) {
+
+    .reviews-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .main-reviews {
+        width: 500px;
+        height: auto;
+        border-radius: 10px;
+        margin-bottom: 5em;
+        padding: 10px;
+        font-size: 14px;
+        border-radius: 5px;
+        box-shadow: 0 3px 3px rgba(0, 0, 0, 0.4);
+        transition: all 0.4s ease;
+        background-color: rgb(200, 200, 200);
+    }
+
+    .main-reviews:hover {
+        width: 600px;
+        height: auto;
+        background-color: #16a085;
+    }
+
+    .side-sections-reviews {
+        border-radius: 5px;
+        box-shadow: 0 3px 3px rgba(0, 0, 0, 0.4);
+        padding: 20px 30px;
+        opacity: 1;
+        transition: border 0.5s ease, background-color 0.5s ease;
+        margin: 0;
+        font-size: 1.2em;
+        background-color: rgb(200, 200, 200);
+    }
+
+    .side-sections-reviews:hover {
+        border-color: #ecf0f1;
+        background-color: #03362b;
+        color: #c5c5c5;
+    }
+
+    .side-sections-reviews:hover h3 {
+        color: white;
+    }
+}
+
+/* ----- SEZIONE MORE REVIEWS ----- */
+/* ----- MAIN CONTANIER: contiene tutta la sezione "More Reviews" ----- */
+#container-more-reviews {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    font-size: calc(0.5em + 0.4vw);
+    padding: 50px 110px;
+    cursor: pointer;
+}
+
+/* ----- SEZIONE TITOLO MORE REVIEW ----- */
+.container-more-title {
+    width: 100%;
+    font-size: 30px;
+    padding-bottom: 7px;
+    cursor: pointer;
+
+}
+
+/* ----- SEZIONE FIGLIO: contenitore dei 4 div (NIPOTI) ----- */
+.reviews-more-container {
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+/* ----- SEZIONE NIPOTI ----- */
+.more-reviews-side-container {
+    width: 25em;
+    height: 25em;
+    margin-left: 50px;
+}
+
+/* ----- SEZIONE NIPOTI: testo, titolo, autore ----- */
+.paragraph-more-reviews {
+    margin-top: 10px;
+    font-weight: 200px;
+    color: #2f2f2f;
+    max-width: 330px;
+    text-align: justify;
+}
+
+.nav-bar-more-reviews {
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.author-more-reviews {
+    display: block;
+    margin: 10px 0;
+    font-size: 14px;
+    font-weight: 600px;
+}
+
+/* SEZIONE @media di "More Reviews" */
+@media(max-width: 1600px) {
+    .reviews-more-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .more-reviews-side-container {
+        width: calc(50%-10px);
+        height: auto;
+    }
+
+    .paragraph-more-reviews {
+        font-size: 13px;
+    }
+}
+
+/* ----- More From Pitchfor ----- */
+#more-from-pitchfork {
+    text-align: center;
+    font-size: calc(0.5em + 0.4vw);
+    padding: 0 110px;
+}
+
+.mfp-title {
+    width: 100%;
+    font-size: 30px;
+    border-top: 2px solid black;
+    padding: 20px;
+    border-bottom: 2px solid black;
+    cursor: pointer;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.more-from-pitchfork-top,
+.more-from-pitchfork-bottom {
+    display: block;
+    text-align: center;
+    font-size: 0;
+
+}
+
+/* ----- Card di JS ----- */
+.mfp-top-card,
+.mfp-bottom-card {
+    display: inline-block;
+    vertical-align: top;
+    width: 302px;
+    margin: 0 12px 50px 12px;
+    text-align: left;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+/* -----  Immagini delle card ----- */
+#more-from-pitchfork img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ----- Categoria delle card ----- */
+.nav-bar-mfp {
+    font-size: 14px;
+    color: #2B2B2B;
+    text-align: justify;
+    padding-top: 5px;
+    cursor: pointer;
+}
+
+.title-mfp {
+    font-size: 22px;
+    padding: 5px 0;
+    cursor: pointer;
+}
+
+.author-mfp,
+.date-mfp {
+    display: block;
+    font-size: 13px;
+}
+
+.author-mfp {
+    color: #1A1A1A;
+    padding: 5px 0;
+}
+
+.date-mfp {
+    color: #828282;
+}
+
+
+/* ----- FEATURES ----- */
+/* ----- CONTENITORE PADRE  ----- */
+#container-features {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    font-size: calc(0.5em + 0.4vw);
+    padding: 50px 110px;
+}
+
+/* ----- TITOLO ----- */
+.container-features-title {
+    width: 100%;
+    font-size: 30px;
+    border-top: 2px solid black;
+    padding: 20px;
+    border-bottom: 2px solid black;
+    cursor: pointer;
+}
+
+/* ----- CONTENITORE FIGLIO ----- */
+.features-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px;
+}
+
+/* ----- CONTENITORE NIPOTI ----- */
+.features-side-container {
+    padding-top: 20px;
+    width: calc(50%-10px);
+    height: auto;
+    max-width: 600px;
+    cursor: pointer;
+}
+
+.features-side-container h1 {
+    text-align: justify;
+}
+
+.features-side-container h3,
+.author-features,
+.date-features {
+    font-size: 14px;
+}
+
+/* ----- SEZIONE @media DI FEATURES ----- */
+@media(max-width:1024px) {
+    .features-container img {
+        border: 2px solid black;
+        padding: 5px;
+
+    }
+}
+
+/* ----- SEZIONE FOOTER ----- */
+/* ----- SEZIONE PADRE: contenitore completo del footer ----- */
+#main-footer {
+    background-color: rgb(26, 26, 26);
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    cursor: pointer;
+}
+
+/* ----- SEZIONE PADRE: titolo ed elenchi ----- */
+#main-footer h4 {
+    color: #EEEEEE;
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+#main-footer ul li a {
+    text-decoration: none;
+    color: #B3B3B3;
+    font-size: 12px;
+    margin: 7px;
+    font-weight: 600;
+}
+
+#main-footer ul li {
+    list-style: none;
+}
+
+#main-footer ul li:hover {
+    text-decoration: underline;
+    text-decoration-color: white;
+
+}
+
+/* ----- CONTENITORE FIGLIO: parte superiore ----- */
+.top-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+/* ----- SEZIONE NIPOTE SUPERIORE: parte sinistra ----- */
+/* ----- SEZIONE NIPOTE SUPERIORE: titolo, paragrafo e icone social ----- */
+.left-footer h4 {
+    font-size: 25px !important;
+}
+
+.left-footer p {
+    color: #EEEEEE;
+    font-size: 14px;
+}
+
+/* ----- Sezione social ----- */
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.social-icon img {
+    width: 32px;
+    height: 32px;
+}
+
+
+/* ----- SEZIONE NIPOTE: parte destra ----- */
+/* ----- SEZIONE NIPOTE: titolo, paragrafo ----- */
+.right-footer ul li {
+    color: #B3B3B3;
+    font-size: 12px;
+    margin-bottom: 7px;
+    font-weight: 600;
+}
+
+/* ----- SEZIONE FIGLIO: parte inferiore ----- */
+#footer-side {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-top: 2px solid white;
+    padding-top: 50px;
+    color: #B3B3B3;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+/* ----- SEZIONE NIPOTE INFERIORE: elenchi e disclaimer ----- */
+.bottom-footer ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    gap: 15px;
+    font-size: 12px;
+    padding: 0;
+    margin: 0;
+    justify-content: center;
+}
+
+.disclaimer-footer p {
+    font-size: 11px;
+    color: #B3B3B3;
+    text-align: justify;
+    padding-top: 50px;
+    justify-content: center;
+    align-items: center;
+    cursor: default;
+}
+
+/* ----- SEZIONE @media DEL FOOTER ----- */
+@media(max-width:900px) {
+    .top-footer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .left-footer h4 {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+    .center-footer ul li,
+    .right-footer ul li {
+        display: none;
+    }
+}
+
+#modal-view {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#modal-view.hidden {
+    display: none;
+}
+
+#modal-view img {
+    max-height: 90%;
+    max-width: 90%;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #000;
+}
+
+.no-scroll {
+    overflow: hidden;
+}
+
+/* ----- SEZIONE API SPOTIFY ----- */
+#container-spotify {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: calc(0.5em + 0.4vw);
+    padding: 50px 110px;
+}
+
+.container-spotify-title {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    border-top: 2px solid green;
+    border-bottom: 2px solid green;
+    padding: 20px;
+    font-size: 30px;
+    flex-wrap: wrap;
+}
+
+.container-spotify-title h1 {
+    margin: 0;
+    font-size: 1.6em;
+    cursor: pointer;
+}
+
+.container-spotify-title h1:hover {
+    text-decoration: underline;
+    text-decoration-color: green;
+}
+
+#search-formAPI {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+#search-formAPI label {
+    display: none;
+}
+
+#search-formAPI input[type="text"] {
+    padding: 8px 12px;
+    font-size: 1rem;
+    border: 2px solid #aaa;
+    border-radius: 8px;
+    transition: border-color 0.3s;
+}
+
+#search-formAPI input[type="text"]:focus {
+    border-color: green;
+    outline: none;
+}
+
+#search-formAPI button {
+    padding: 8px 16px;
+    background-color: rgb(2, 154, 2);
+    color: black;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#search-formAPI button:hover {
+    background-color: rgb(1, 66, 1);
+    color: whitesmoke;
+}
+
+#album-viewAPI {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    max-width: 100%;
+    justify-content: center;
+}
+
+.albumAPI {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: rgb(103, 228, 103);
+    padding: 10px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: calc(20% - 20px);
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.albumAPI img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.albumAPI:hover img {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.albumAPI:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.albumAPI span {
+    margin-top: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #222;
+    word-wrap: break-word;
+}
+
+/* ----- API DI NEWSAPI ----- */
+#newsAPI-container {
+    padding: 20px;
+    background-color: #333333;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    margin: 0 100px 50px;
+}
+
+#newsAPI-container h1 {
+    font-family: "Charm", cursive;
+    font-weight: 700;
+    font-style: normal;
+    text-align: center;
+    color: #F4F7F5;
+    font-size: 35px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+#search-form-newsAPI {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+#search-query {
+    padding: 10px;
+    font-size: 1rem;
+    width: 60%;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+}
+
+#search-form-newsAPI button {
+    padding: 10px 16px;
+    background-color: #F5F7F3;
+    color: black;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-left: 10px;
+}
+
+#search-form-newsAPI button:hover {
+    background-color: #8EA4D2;
+}
+
+#news-viewAPI {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.news-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: #8EA4D2;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: calc(20% - 20px);
+    margin-bottom: 20px;
+    font-weight: 600;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.news-title {
+    color: #4e3d3d;
+    font-size: 1.0rem;
+    margin: 5px;
+    text-decoration: none;
+}
+
+.news-title:hover {
+    text-decoration: none;
+}
+
+.news-description {
+    color: rgb(41, 41, 116);
+    font-size: 0.75rem;
+    margin: 5px;
+}
+
+.news-link {
+    color: black;
+    text-decoration: none;
+    font-size: 0.70rem;
+}
+
+.news-link:hover {
+    text-decoration: underline;
+}
+
+.news-item img {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.news-item:hover img {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.news-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.news-item span {
+    margin-top: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #222;
+    word-wrap: break-word;
+}

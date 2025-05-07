@@ -1,0 +1,68 @@
+const ARTICLES = [
+  {
+    isg: "mhw3_Immagini/daveAllen.webp",
+    category: "NEWS",
+    title: "Gang of Four Bassist Dave Allen Dies at 69",
+    author: "By Jazz Monroe",
+    date: "April 7, 2025",
+    position: "top",
+  },
+  {
+    img: "mhw3_Immagini/phonk.webp",
+    category: "COLUMNS",
+    title:
+      "How Phonk Became the Most Lucrative Yet Lifeless Genre of the 2020s",
+    author: "By Kieran Press-reynolds",
+    date: "March 26, 2025",
+    position: "top",
+  },
+  {
+    img: "mhw3_Immagini/cartiSong.webp",
+    category: "RAP",
+    title: "Somehow, a Coveted Carti Song Is on the New NAX Album",
+    author: "By Mano Sundaresan",
+    date: "March 28, 2025",
+    position: "top",
+  },
+  {
+    img: "mhw3_Immagini/yhwn.webp",
+    category: "ROCK",
+    title: 'YHWN Nailgun Strip the Paint Off the Wall on "Sickle Walk"',
+    author: "By YHWN Nailgun",
+    date: "February 10, 2025",
+    position: "top",
+  },
+  {
+    img: "mhw3_Immagini/radioShow.webp",
+    category: "COLUMNS",
+    title: "Last Night an NTS Radio Show Saved My Life",
+    author: "By Meaghan Garvey",
+    date: "March 27, 2025",
+    position: "bottom",
+  },
+  {
+    img: "mhw3_Immagini/mirror.webp",
+    category: "ROCK / POP/R&B",
+    title: 'Perfume Genius Returns With the Rapturous "It\'s a Mirror"',
+    author: "By Walden Green",
+    date: "January 15, 2025",
+    position: "bottom",
+  },
+  {
+    img: "mhw3_Immagini/newMusic.webp",
+    category: "NEWS",
+    title: "New Music Releases and Upcoming Albums in 2025",
+    author: "By Pitchfork",
+    date: "April 7, 2025",
+    position: "bottom",
+  },
+  {
+    img: "mhw3_Immagini/mj.webp",
+    category: "ROCK",
+    title:
+      'MJ Lenderman Takes This Is Lorelei\'s "Dancing in the Club" for a Little Spin',
+    author: "By Quinn Moreland",
+    date: "March 25, 2025",
+    position: "bottom",
+  },
+];
